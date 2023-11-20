@@ -1,8 +1,8 @@
 import {RoverManager} from "../main/roverManager";
 
-describe('example test', () => {
-    it("should give sum of a + b when adding a and b", () => {
-        let example: RoverManager = new RoverManager();
-        expect(example.add(1, 2)).toBe(3);
+describe('when providing movement vector', () => {
+    it("the result is a correctly formatted string", () => {
+        let roverManager: RoverManager = new RoverManager();
+        expect(roverManager.execute()).toMatch(//);
     })
 })
