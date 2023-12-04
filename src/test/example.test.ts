@@ -1,8 +1,23 @@
-import {Example} from "../main/example";
+import { Example } from "../main/example";
+import { GameOfLife } from "./GameOfLife";
 
-describe('example test', () => {
-    it("should give sum of a + b when adding a and b", () => {
-        let example: Example = new Example();
-        expect(example.add(1, 2)).toBe(3);
-    })
-})
+//[[true]] -> [[false]]
+//[[false]] -> [[false]]
+
+export type Board = boolean[][];
+
+describe("Game of life", () => {
+  it("should turn a single alive cell to dead", () => {
+    let board: Board = [[true]];
+    let gameOfLife = new GameOfLife(board);
+    gameOfLife.tick();
+    expect(gameOfLife.board).toEqual([[false]]);
+  });
+
+  it.skip("should keep single dead cell as dead", () => {
+    let board: Board = [[false]];
+    let gameOfLife = new GameOfLife(board);
+    gameOfLife.tick();
+    expect(gameOfLife.board).toEqual([[false]]);
+  });
+});
